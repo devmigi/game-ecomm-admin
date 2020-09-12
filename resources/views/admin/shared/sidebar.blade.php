@@ -1,8 +1,8 @@
 <div class="main-navbar">
     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-        <a class="navbar-brand w-100 mr-0" href="/" style="line-height: 25px;">
+        <a class="navbar-brand w-100 mr-0" href="/products" style="line-height: 25px;">
             <div class="d-table m-auto">
-                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="/img/shards-dashboards-logo.svg" alt="Gamelelo">
+                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-height: 26px;" src="/images/logo.png" alt="Gamelelo">
                 <span class="d-none d-md-inline ml-1">Gamelelo</span>
             </div>
         </a>

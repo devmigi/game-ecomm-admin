@@ -1,0 +1,21 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Base Shards UI Kit
+@import '~shards-ui/src/scss/shards';
+@import 'shard/shards-dashboards.scss';
+
+
+.form-control{
+  background: #fafafa;
+}
+
+.main-content > .alert{
+  border-radius: 0;
+}
