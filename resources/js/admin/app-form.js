@@ -64,7 +64,7 @@
 
 
     function deleteProductImage(element, imageId, productId){
-        var url = '/admin/products/'+ productId +'/image/'+ imageId;
+        var url = '/products/'+ productId +'/image/'+ imageId;
 
         axios.delete(url)
         .then(function (response) {
