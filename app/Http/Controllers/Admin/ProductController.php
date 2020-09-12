@@ -57,6 +57,10 @@ class ProductController extends Controller
      */
     public function save(Request $request)
     {
+        $request->validate([
+            'sku' => 'required|unique:products',
+        ]);
+
         $product = new Product();
         $product->name = $request->name;
         $product->slug = Str::slug($request->name, '-');

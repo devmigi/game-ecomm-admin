@@ -53,7 +53,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Product Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{ isset($copyProduct->name) ? $copyProduct->name . ' ' . $version->name : '' }}" placeholder="Product Name" required>
+                                    <input type="text" class="form-control" id="name" name="name" value="{{ isset($copyProduct->name) ? $copyProduct->name . ' ' . $version->name : old('name') }}" placeholder="Product Name" required>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -67,7 +67,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="sku">SKU</label>
-                                    <input type="text" class="form-control" id="sku" name="sku" value="{{ isset($copyProduct->sku) ? strtoupper($copyProduct->sku .'-'. substr($version->name, 0, 3)) : '' }}" placeholder="SKU" required>
+                                    <input type="text" class="form-control" id="sku" name="sku" value="{{ isset($copyProduct->sku) ? strtoupper($copyProduct->sku .'-'. substr($version->name, 0, 3)) : old('sku') }}" placeholder="SKU" required>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -84,14 +84,14 @@
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label for="details">Product Description</label>
-                                    <textarea class="form-control" rows="5" id="details" name="details" placeholder="Product Description">{{ $copyProduct->details ?? '' }}</textarea>
+                                    <textarea class="form-control" rows="5" id="details" name="details" placeholder="Product Description">{{ $copyProduct->details ?? old('details') }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label for="keywords">Search Keywords</label>
-                                    <textarea class="form-control" rows="3" id="keywords" name="keywords" placeholder="Keywords">{{ $copyProduct->keywords ?? '' }}</textarea>
+                                    <textarea class="form-control" rows="3" id="keywords" name="keywords" placeholder="Keywords">{{ $copyProduct->keywords ?? old('keywords') }}</textarea>
                                 </div>
                             </div>
 
@@ -135,32 +135,32 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4 col-6">
                                     <label for="mrp">MRP <small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="mrp" name="mrp" value="{{ $copyProduct->mrp ?? '' }}" placeholder="MRP" required>
+                                    <input type="number" class="form-control" id="mrp" name="mrp" value="{{ $copyProduct->mrp ?? old('mrp') }}" placeholder="MRP" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="cost_price">Cost Price <small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="cost_price" name="cost_price" placeholder="Cost Price" required>
+                                    <input type="number" class="form-control" id="cost_price" name="cost_price" value="{{ old('cost_price') }}" placeholder="Cost Price" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="selling_price">Selling Price <small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="selling_price" name="selling_price" placeholder="Selling Price" required>
+                                    <input type="number" class="form-control" id="selling_price" name="selling_price" value="{{ old('selling_price') }}" placeholder="Selling Price" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="selling_price_cap">Min. Selling Price Cap<small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="selling_price_cap" name="selling_price_cap" placeholder="Selling Price Cap" required>
+                                    <input type="number" class="form-control" id="selling_price_cap" name="selling_price_cap" value="{{ old('selling_price_cap') }}" placeholder="Selling Price Cap" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="trading_price">Trading Price <small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="trading_price" name="trading_price" value="{{ $copyProduct->trading_price ?? '' }}" placeholder="Trading Price" required>
+                                    <input type="number" class="form-control" id="trading_price" name="trading_price" value="{{ $copyProduct->trading_price ?? old('trading_price') }}" placeholder="Trading Price" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="trading_price_cap">Max. Trading Price Cap <small>(in Rs.)</small></label>
-                                    <input type="number" class="form-control" id="trading_price_cap" name="trading_price_cap" value="{{ $copyProduct->trading_price_cap ?? '' }}" placeholder="Trading Price Cap" required>
+                                    <input type="number" class="form-control" id="trading_price_cap" name="trading_price_cap" value="{{ $copyProduct->trading_price_cap ?? old('trading_price_cap') }}" placeholder="Trading Price Cap" required>
                                 </div>
 
                             </div>
@@ -176,12 +176,12 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4 col-6">
                                     <label for="inventory">Inventory</label>
-                                    <input type="number" class="form-control" id="inventory" name="inventory" placeholder="Inventory" required>
+                                    <input type="number" class="form-control" id="inventory" name="inventory" value="{{ old('inventory') }}" placeholder="Inventory" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
                                     <label for="inventory_cap">Max. Inventory Cap</label>
-                                    <input type="number" class="form-control" id="inventory_cap" name="inventory_cap" placeholder="Max. Inventory Cap" required>
+                                    <input type="number" class="form-control" id="inventory_cap" name="inventory_cap" value="{{ old('inventory_cap') }}" placeholder="Max. Inventory Cap" required>
                                 </div>
 
                                 <div class="form-group col-md-4 col-6">
@@ -202,22 +202,22 @@
                             <div class="form-row">
                                 <div class="form-group col-md-3 col-6">
                                     <label for="length">Length <small>(in cm.)</small></label>
-                                    <input type="text" class="form-control" id="length" name="length" value="{{ $copyProduct->length ?? '' }}" placeholder="Length" required>
+                                    <input type="text" class="form-control" id="length" name="length" value="{{ $copyProduct->length ?? old('length') }}" placeholder="Length" required>
                                 </div>
 
                                 <div class="form-group col-md-3 col-6">
                                     <label for="width">Width <small>(in cm.)</small></label>
-                                    <input type="text" class="form-control" id="width" name="width" value="{{ $copyProduct->width ?? '' }}" placeholder="Width" required>
+                                    <input type="text" class="form-control" id="width" name="width" value="{{ $copyProduct->width ?? old('width') }}" placeholder="Width" required>
                                 </div>
 
                                 <div class="form-group col-md-3 col-6">
                                     <label for="height">Height <small>(in cm.)</small></label>
-                                    <input type="text" class="form-control" id="height" name="height" value="{{ $copyProduct->height ?? '' }}" placeholder="Height" required>
+                                    <input type="text" class="form-control" id="height" name="height" value="{{ $copyProduct->height ?? old('height') }}" placeholder="Height" required>
                                 </div>
 
                                 <div class="form-group col-md-3 col-6">
                                     <label for="weight">Weight <small>(in grams)</small></label>
-                                    <input type="number" class="form-control" id="weight" name="weight" value="{{ $copyProduct->weight ?? '' }}" placeholder="Weight" required>
+                                    <input type="number" class="form-control" id="weight" name="weight" value="{{ $copyProduct->weight ?? old('weight') }}" placeholder="Weight" required>
                                 </div>
                             </div>
 

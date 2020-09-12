@@ -31,6 +31,18 @@
                 @include('admin.shared.topnav')
             </div>
 
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <i class="fa fa-check mx-2"></i>
+                        {{ $error }}
+                    </div>
+                @endforeach
+            @endif
+
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
